@@ -4,9 +4,9 @@ RAW_OBJ = main.o err1.o df.o md.o cp.o of.o rd.o rf.o stfile.o cd.o pwd.o ls.o  
 RAW_LIB = err1.h df.h md.h cp.h of.h rd.h rf.h stfile.h cd.h pwd.h ls.h  help.h
 RAW_SRC	= main.c err1.c df.c md.c cp.c of.c rd.c rf.c stfile.c cd.c pwd.c ls.c  help.c
 
-obj		= $(addprefix $(obj_dir),$(RAW_OBJ))
+obj     = $(addprefix $(obj_dir),$(RAW_OBJ))
 lib     = $(addprefix $(h_dir),$(RAW_LIB)) 
-src		= $(addprefix $(src_dir),$(RAW_SRC)) 
+src     = $(addprefix $(src_dir),$(RAW_SRC)) 
 
 obj_dir = ./objects/
 h_dir   = ./headers/
@@ -35,11 +35,11 @@ $(obj_dir)rd.o     : $(src_dir)rd.c     $(h_dir)rd.h
 	gcc -o $@ -c $(src_dir)rd.c
 $(obj_dir)rf.o     : $(src_dir)rf.c     $(h_dir)rf.h
 	gcc -o $@ -c $(src_dir)rf.c
-$(obj_dir)cd.o     : $(src_dir)cd.c		$(h_dir)cd.h
+$(obj_dir)cd.o     : $(src_dir)cd.c     $(h_dir)cd.h
 	gcc -o $@ -c $(src_dir)cd.c
-$(obj_dir)pwd.o    : $(src_dir)pwd.c	$(h_dir)pwd.h
+$(obj_dir)pwd.o    : $(src_dir)pwd.c    $(h_dir)pwd.h
 	gcc -o $@ -c $(src_dir)pwd.c
-$(obj_dir)ls.o     : $(src_dir)ls.c		$(h_dir)ls.h
+$(obj_dir)ls.o     : $(src_dir)ls.c     $(h_dir)ls.h
 	gcc -o $@ -c $(src_dir)ls.c
 $(obj_dir)stfile.o : $(src_dir)stfile.c $(h_dir)stfile.h
 	gcc -o $@ -c $(src_dir)stfile.c
@@ -48,7 +48,7 @@ $(obj_dir)help.o   : $(src_dir)help.c   $(h_dir)help.h
 
 #------------------- Special -------------------
 clean :
-	rm -f binary ./objects/$(OBJECTS)
+	rm -f binary ./objects/$(obj)
 test :
 	$(obj)
 #------- $(addprefix pref, arg) добавляет к arg префикс pref
