@@ -9,6 +9,9 @@
 #include "../headers/rd.h"
 #include "../headers/rf.h"
 #include "../headers/stfile.h"
+#include "../headers/cd.h"
+#include "../headers/pwd.h"
+#include "../headers/ls.h"
 #include "../headers/help.h"
 
 int main ()
@@ -75,6 +78,20 @@ int main ()
 			printf("Enter path name:\nPath>");
 			scanf("%255s",path);
 			makedir(path);
+		}
+
+		else if (strcmp(c, "cd") == 0) {
+			printf("Enter path name:\nPath>");
+			scanf("%255s",path);
+			changedir(path);
+		}
+
+		else if (strcmp(c, "ls") == 0) {
+			listdir();
+		}
+
+		else if (strcmp(c, "pwd") == 0) {
+			printdir();
 		}
 
 		else if (strcmp(c, "help") == 0) {
