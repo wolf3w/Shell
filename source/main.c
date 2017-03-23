@@ -82,7 +82,7 @@ int main ()
 		}
 
 		else {
-			printf("Unknown command. Enter 'help' for list of command.\n");
+			printf("Unknown command. Enter 'help' to display a list of commands.\n");
 		}
 
 	}
