@@ -19,8 +19,11 @@ void copyfile (char *path, char *nname)
 
 	ffd = open(path, O_RDONLY);
 
-	if (ffd == -1)
+	if (ffd == -1) {
 		err1();
+		return;
+	}
+
 	sfd = open (nname, O_WRONLY | O_CREAT | O_EXCL, 0644);
 
 	if (sfd == -1)

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <sys/types.h>
+#include <sys/stat.h>
 #include <dirent.h>
 #include <errno.h>
 #include <string.h>
@@ -14,11 +15,15 @@ void deldir (char *path)
 	DIR *dir;
 	int u;
 	struct dirent *sdir;
+	struct stat st;
 
 	dir = opendir(path);
 
-	if (dir == NULL)
+	if (dir == NULL) { 
 		err1();
+		return;
+	}
+
 	chdir(path);
 
 	while ((sdir = readdir(dir)) != NULL) {
@@ -37,7 +42,7 @@ void deldir (char *path)
 
 	chdir("..");
 
-	if (rmdir(path) == NULL)
+	if (rmdir(path) == -1)
 		err1();
 }
 
