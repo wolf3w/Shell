@@ -26,8 +26,10 @@ void copyfile (char *path, char *nname)
 
 	sfd = open (nname, O_WRONLY | O_CREAT | O_EXCL, 0644);
 
-	if (sfd == -1)
+	if (sfd == -1) {
 		err1();
+		return;
+	}
 	
 	while ((count = read(ffd, buf, BS)) > 0)
 	{

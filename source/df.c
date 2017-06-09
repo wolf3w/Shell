@@ -10,8 +10,10 @@
 
 void delfile (char *path)
 {
-	if ( unlink(path) == -1 )
+	if ( unlink(path) == -1 ) {
 		err1();
+		return;
+	}
 	else
 		printf("File deleting succesful\n");
 }

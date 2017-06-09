@@ -24,7 +24,6 @@ int main ()
 
 	help_msg();
 
-
 	while (1) {
 
 		printf("\n\033[31;40;1m>>\033[m");
