@@ -14,14 +14,14 @@
 #include "../headers/ls.h"
 #include "../headers/help.h"
 
-int main ()
+int main (int argc, char *argv[])
 {
 	char path[255];
 	char nname[255];
 	char c[48];
+	int flag = 0;
 
 	info();
-
 	help_msg();
 
 	while (1) {
